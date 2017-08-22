@@ -1,11 +1,10 @@
-<div class=jumbotron>
-<h3>Sistema de Cadastro de Clientes</h3>
+<div class=telacliente>
 <form class="form-inline" name="clienteForm">
 <input ng-model="cliente.nome" class="form-control" type="text" ng-required="true" ng-minlength="4" name="nome" placeholder="Nome"/>
 <button class=" btn btn-primary"  ng-disabled="clienteForm.$invalid" ng-click="adicionarCliente(cliente)">Cadastar</button>
 		
 </form>
-<table class="table">
+<table class="table table-striped">
 <th>Nome</th>
 <th></th>
 <th></th>
