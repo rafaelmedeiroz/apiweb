@@ -1,9 +1,10 @@
  var app = angular.module("appCliente",['ngRoute']);
 
- app.config(function($routeProvider){
+ app.config(function($routeProvider)
+{
 	
 	 $routeProvider
-	 .when("/clientes",{templateURL:'../../view/cliente.html', controller:'clienteController'})
+	 .when("/clientes",{templateUrl:'view/cliente.html', controller:'clienteController'})
 	 .otherwise({rediretTo:'/'});
  });
 
