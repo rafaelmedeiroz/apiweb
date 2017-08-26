@@ -31,6 +31,11 @@ public ResponseEntity<Collection<Cliente>> buscarTodosClientes() {
 	Collection<Cliente> clientesBuscados = clienteService.buscarTodos();
 	return new ResponseEntity<>(clientesBuscados, HttpStatus.OK);
 }
+@RequestMapping(method=RequestMethod.GET, value="/clientes/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
+public ResponseEntity<Cliente> buscarClientePorId(@PathVariable Integer id) {
+	Cliente clientesencontrado = clienteService.buscarPorId(id);
+	return new ResponseEntity<>(clientesencontrado, HttpStatus.OK);
+}
 //endpoint
 @RequestMapping(method=RequestMethod.DELETE, value="/clientes/{id}")
 public ResponseEntity<Cliente> exlcuirCliente(@PathVariable Integer id) {

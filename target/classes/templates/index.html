@@ -1,5 +1,6 @@
 <html ng-app ="appCliente">
 <head>
+	<base href="/" />
 	<meta charset="UTF-8"/>
 	<link rel="stylesheet" href="../lib/bootstrap.css"/>
 	<link rel="stylesheet" href="../lib/meu.css"/>
@@ -9,10 +10,12 @@
 	<script src="../js/controller/cliente-controller.js"></script>
 	<script src="../js/controller/cidade-controller.js"></script>
 	<script src="../js/controller/estado-controller.js"></script>
+	<script src="../js/controller/main-controller.js"></script>
+	<script src="../js/controller/cliente-detalhe-controller.js"></script>
 	
 
 </head>
-<body>
+<body ng-controller="mainController">
 
 <nav class="navbar navbar-default sidebar" role="navigation">
 	<div class="container-fluid">
@@ -27,14 +30,17 @@
     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Inicio<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-        <li><a href="#!clientes" class="dropdown-toggle">Clientes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>          
-        <li ><a href="#">Libros<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>        
-        <li ><a href="#">Tags<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+        <li><a href="clientes" class="dropdown-toggle">Clientes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>          
+        <li ><a href="estados">Estados<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-road"></span></a></li>        
+        <li ><a href="cidades">Cidades<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
       </ul>
     </div>
   </div>
  
 </nav>
+Path:{{$location.path()}}
+TemplateURL:{{$route.current.templateUrl}}
+Parametros:{{$route.current.params}}
 <div ng-view="ng-view">
  </div>
 </body>

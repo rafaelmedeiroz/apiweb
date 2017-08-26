@@ -1,18 +1,20 @@
 <div class=telacliente>
-<form class="form-inline" name="clienteForm">
-<input ng-model="cliente.nome" class="form-control" type="text" ng-required="true" ng-minlength="4" name="nome" placeholder="Nome"/>
-<button class=" btn btn-primary"  ng-disabled="clienteForm.$invalid" ng-click="adicionarCliente(cliente)">Cadastar</button>
-		
-</form>
-<table class="table table-striped">
-<th>Nome</th>
-<th></th>
-<th></th>
-<tr ng-repeat="cliente in clientes">
-<td>{{cliente.nome}}</td>
-<td><button class=" btn btn-danger "  ng-click="removerCliente(cliente)">Remover</button>
-<button class=" btn btn-warning "  ng-click="alterarCliente(cliente)">Alterar</button>
-<button class=" btn btn-danger "  ng-click="cancelarAlteracaoCliente()">Cancelar</button></td>
-</tr>
-</table>
+	<form class="form-inline" name="clienteForm">
+	<input ng-model="cliente.nome" class="form-control" type="text" ng-required="true" ng-minlength="4" name="nome" placeholder="Nome"/>
+	<button class=" btn btn-primary"  ng-disabled="clienteForm.$invalid" ng-click="adicionarCliente(cliente)">Cadastar</button>	
+	</form>
+	<table class="table table-striped">
+		<th>Nome</th>
+		<th></th>
+		<th></th>
+		<tr ng-repeat="cliente in clientes">
+			<td>{{cliente.nome}}</td>
+			<td>
+				<button class=" btn btn-danger "  ng-click="removerCliente(cliente)">Remover</button>
+				<button class=" btn btn-warning "  ng-click="alterarCliente(cliente)">Alterar</button>
+				<button class=" btn btn-danger "  ng-click="cancelarAlteracaoCliente()">Cancelar</button>
+				<a href="clientes/{{cliente.id}}">Detalhe</a>
+			</td>
+		</tr>
+	</table>
 </div>
